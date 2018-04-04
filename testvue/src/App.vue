@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png"> -->
     <a @click="doClick">Toast</a>
     <HelloWorld/>
   </div>
@@ -17,6 +17,8 @@ export default {
   },
   methods: {
     doClick () {
+      import('./assets/logo.png')
+      import('./assets/Penguins.jpg')
       toast({
         content: 'Toast! Toast!'
       })
