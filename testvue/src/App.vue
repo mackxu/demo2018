@@ -2,19 +2,15 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <a @click="doClick">Toast</a>
-    <HelloWorld/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 import toast from './components/toast/function-toast'
+import es6 from './components/es6'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
   methods: {
     doClick () {
       import('./assets/logo.png')
@@ -23,6 +19,9 @@ export default {
         content: 'Toast! Toast!'
       })
     }
+  },
+  created () {
+    es6()
   }
 }
 </script>
