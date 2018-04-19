@@ -22,6 +22,6 @@ export default class Watcher {
    * @return {[type]} [description]
    */
   update() {
-    this.el[this.attr] = this.vm.$data[this.exp]
+    this.el[this.attr] = this.vm.$dataProps[this.exp]
   }
 }
