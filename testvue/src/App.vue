@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <a @click="doClick">Toast</a>
+    <flip></flip>
   </div>
 </template>
 
 <script>
 import toast from './components/toast/function-toast'
-import es6 from './components/es6'
+import flip from './components/flip'
 
 export default {
   name: 'App',
+  components: {
+    flip
+  },
   methods: {
     doClick () {
       toast({
@@ -19,7 +21,6 @@ export default {
     }
   },
   created () {
-    es6()
   }
 }
 </script>
