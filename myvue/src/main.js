@@ -7,7 +7,7 @@ new MyVue({
   },
   methods: {
     increment() {
-      this.number = (+this.number) + 1
+      this.number++
     }
   }
 });

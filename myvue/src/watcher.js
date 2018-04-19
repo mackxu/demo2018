@@ -22,6 +22,7 @@ export default class Watcher {
    * @return {[type]} [description]
    */
   update() {
+    console.log(`${this.exp} update view`)
     this.el[this.attr] = this.vm.$dataProps[this.exp]
   }
 }

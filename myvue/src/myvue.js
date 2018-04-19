@@ -33,11 +33,14 @@ export default class MyVue {
         enumerable: true,
         configurable: true,
         get() {
+          console.log(`${key} value: ${value}`)
           return value
         },
         set(newVal) {
           if (value !== newVal) {
+            console.log(`set ${key} value: ${value}`)
             value = newVal
+            // 劫持监听所有data属性
             // 通知watcher更新视图
             watchers.forEach(watcher => watcher.update())
           }
@@ -69,7 +72,7 @@ export default class MyVue {
       if (node.hasAttribute('v-model') && (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA')) {
         node.addEventListener('input', ((node) => {
           const exp = node.getAttribute('v-model')
-          // 添加一个watcher
+          // 添加订阅者，初始化视图
           self._binding[exp]._watchers.push(new Watcher(
             'input',
             node,
@@ -77,13 +80,14 @@ export default class MyVue {
             exp,
             'value'
           ))
+          // 双向绑定之视图更新model
           return () => self.$dataProps[exp] = node.value
         })(node))
 
       }
       if (node.hasAttribute('v-text')) {
         const exp = node.getAttribute('v-text')
-        // 添加一个watcher
+        // 添加订阅者，初始化视图
         self._binding[exp]._watchers.push(new Watcher(
           'text',
           node,
