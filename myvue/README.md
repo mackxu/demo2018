@@ -1,18 +1,6 @@
 # myvue
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- 重写dataProps访问方法
+- 根据指令创建watcher，关联view和model
+- 每个dataProps可以对应多个watcher
+- watcher更新视图
