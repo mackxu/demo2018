@@ -1,11 +1,11 @@
 export default class Watcher {
   /**
    * [constructor description]
-   * @param  {[type]} name [description]
-   * @param  {[type]} el   [description]
-   * @param  {[type]} vm   [description]
-   * @param  {[type]} exp  [description]
-   * @param  {[type]} attr [description]
+   * @param  {[type]} name watcher名称
+   * @param  {[type]} el   指令关联的DOM元素
+   * @param  {[type]} vm   指令所属的vm实例
+   * @param  {[type]} exp  指令的值，如number
+   * @param  {[type]} attr 指令关联的DOM属性
    * @return {[type]}      [description]
    */
   constructor(name, el, vm, exp, attr) {
