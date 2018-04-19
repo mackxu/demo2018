@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>myvue</title>
+  </head>
+  <body>
+    <div id="app">
+      <form>
+        <input type="text" v-model="number">
+        <a @click="increment" href="javascript: void(0);">加1</a>
+      </form>
+      <h3 v-text="number"></h3>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
