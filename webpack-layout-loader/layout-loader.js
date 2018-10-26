@@ -5,7 +5,6 @@ const fs = require('fs')
 const loaderUtils = require('loader-utils')
 
 module.exports = function layoutLoader(source) {
-  console.log(this.loaders);
   const options = loaderUtils.getOptions(this);
   const layoutPath = options.layout;
   console.log(`layoutPath: ${layoutPath}`);
