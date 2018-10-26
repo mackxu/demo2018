@@ -11,6 +11,8 @@ module.exports = function layoutLoader(source) {
 
   // 告诉 loader-runner 这个 loader 将会异步地回调。返回 this.callback
   const callback = this.async();
+  // 必须声明外部引用的资源
+  this.addDependency(layoutPath);
   // 如果未指定字符编码，则返回原始的 buffer
   fs.readFile(layoutPath, 'utf8', (err, layoutHtml) => {
     if (err) return callback(err)
