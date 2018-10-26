@@ -15,6 +15,6 @@ module.exports = function layoutLoader(source) {
   fs.readFile(layoutPath, 'utf8', (err, layoutHtml) => {
     if (err) return callback(err)
     source = layoutHtml.replace('{{__content__}}', source)
-    callback(null, `export default ${ JSON.stringify(source) }`)
+    callback(null, source)
   })
 }
