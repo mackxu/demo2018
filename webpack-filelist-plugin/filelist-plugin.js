@@ -1,5 +1,6 @@
 class FileListPlugin {
   apply(compiler) {
+    console.dir(compiler.hooks);
     compiler.hooks.emit.tapAsync('FileListPlugin', (compilation, callback) => {
       let fileList = 'bundle list:\n\n';
       // 遍历所有资源文件

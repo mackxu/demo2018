@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FileListPlugin = require('./filelist-plugin.js')
 
-const resolve = (dir) => path.resolve(__dirname, dir);
+const resolve = (dir) => path.join(__dirname, dir);
 
 module.exports = {
   mode: 'production',
